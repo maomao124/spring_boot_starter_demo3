@@ -32,6 +32,12 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>mao</groupId>
+            <artifactId>ip-spring-boot-starter</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
     <build>

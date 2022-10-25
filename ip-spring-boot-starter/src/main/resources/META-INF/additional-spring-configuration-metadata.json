@@ -1,0 +1,17 @@
+{
+  "hints": [
+    {
+      "name": "tools.ip.mode",
+      "values": [
+        {
+          "value": "detail",
+          "description": "明细模式."
+        },
+        {
+          "value": "simple",
+          "description": "极简模式."
+        }
+      ]
+    }
+  ]
+}
