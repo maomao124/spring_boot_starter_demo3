@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
  */
 
 
-@Component
+@Component("ipConfigurationProperties")
 @ConfigurationProperties(prefix = "tools.ip")
 public class IpConfigurationProperties
 {
