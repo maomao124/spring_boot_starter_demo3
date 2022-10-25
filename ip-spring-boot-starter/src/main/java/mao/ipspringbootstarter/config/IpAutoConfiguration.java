@@ -2,6 +2,7 @@ package mao.ipspringbootstarter.config;
 
 import mao.ipspringbootstarter.service.IpCountService;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -21,6 +22,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @EnableScheduling
 @Configuration
+@EnableConfigurationProperties(IpConfigurationProperties.class)
 public class IpAutoConfiguration
 {
     @Bean

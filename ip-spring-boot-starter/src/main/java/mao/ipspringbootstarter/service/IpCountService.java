@@ -3,6 +3,7 @@ package mao.ipspringbootstarter.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
@@ -48,5 +49,26 @@ public class IpCountService
             ipCountMap.put(ipAddress, 1);
         }
         log.debug("IP:" + ipAddress);
+    }
+
+
+    /**
+     * 定时打印一个表格
+     */
+    @Scheduled(cron = "0/10 * * * * ?")
+    public void print()
+    {
+        StringBuilder stringBuilder = new StringBuilder(" IP访问监控\n");
+        stringBuilder.append("+-----ip-address-----+--num--+\n");
+
+        for (Map.Entry<String, Integer> info : ipCountMap.entrySet())
+        {
+            String key = info.getKey();
+            Integer count = info.getValue();
+            String lineInfo = String.format("|%18s |%6d |", key, count);
+            stringBuilder.append(lineInfo).append("\n");
+        }
+        stringBuilder.append("+--------------------+-------+");
+        log.info(stringBuilder.toString());
     }
 }
