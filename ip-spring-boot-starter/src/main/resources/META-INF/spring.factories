@@ -1,2 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  mao.ipspringbootstarter.config.IpAutoConfiguration
+  mao.ipspringbootstarter.config.IpAutoConfiguration,\
+  mao.ipspringbootstarter.config.SpringMvcConfig

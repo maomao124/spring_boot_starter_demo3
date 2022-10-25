@@ -2,6 +2,7 @@ package mao.ipspringbootstarter.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+
 /**
  * Project name(项目名称)：spring_boot_starter_demo3
  * Package(包名): mao.ipspringbootstarter.config
@@ -35,7 +36,7 @@ public class IpConfigurationProperties
     /**
      * 日志输出模式 detail:明细模式 simple:极简模式
      */
-    private String model = LogModel.DETAIL.value;
+    private String mode = LogModel.DETAIL.value;
 
 
     /**
@@ -84,13 +85,13 @@ public class IpConfigurationProperties
      *
      * @param cycle      the cycle
      * @param cycleReset the cycle reset
-     * @param model      the model
+     * @param mode       the mode
      */
-    public IpConfigurationProperties(long cycle, Boolean cycleReset, String model)
+    public IpConfigurationProperties(long cycle, Boolean cycleReset, String mode)
     {
         this.cycle = cycle;
         this.cycleReset = cycleReset;
-        this.model = model;
+        this.mode = mode;
     }
 
     /**
@@ -134,23 +135,23 @@ public class IpConfigurationProperties
     }
 
     /**
-     * Gets model.
+     * Gets mode.
      *
-     * @return the model
+     * @return the mode
      */
-    public String getModel()
+    public String getMode()
     {
-        return model;
+        return mode;
     }
 
     /**
-     * Sets model.
+     * Sets mode.
      *
-     * @param model the model
+     * @param mode the mode
      */
-    public void setModel(String model)
+    public void setMode(String mode)
     {
-        this.model = model;
+        this.mode = mode;
     }
 
     @Override
@@ -160,7 +161,7 @@ public class IpConfigurationProperties
         final StringBuilder stringbuilder = new StringBuilder();
         stringbuilder.append("cycle：").append(cycle).append('\n');
         stringbuilder.append("cycleReset：").append(cycleReset).append('\n');
-        stringbuilder.append("model：").append(model).append('\n');
+        stringbuilder.append("mode：").append(mode).append('\n');
         return stringbuilder.toString();
     }
 }
