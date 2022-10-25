@@ -1,3 +1,5 @@
 tools:
   ip:
-    cycle: 1
+    cycle: 3
+    mode: detail
+    cycle-reset: false

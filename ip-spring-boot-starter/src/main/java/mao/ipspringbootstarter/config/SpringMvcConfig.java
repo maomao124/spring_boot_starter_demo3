@@ -33,7 +33,7 @@ public class SpringMvcConfig implements WebMvcConfigurer
     public void addInterceptors(InterceptorRegistry registry)
     {
         //proxyBeanMethods默认为true，不是直接new，是从容器里拿
-        registry.addInterceptor(ipInterceptor());
+        registry.addInterceptor(ipInterceptor()).excludePathPatterns("/error");
     }
 
 
